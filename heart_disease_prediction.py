@@ -18,3 +18,8 @@ df_clean.loc[heartdisease_mask, "Cholesterol"] = cholesterol_without_heartdiseas
     to_replace=0, value=cholesterol_without_heartdisease.median())
 df_clean.loc[~heartdisease_mask, "Cholesterol"] = cholesterol_with_heartdisease.replace(
     to_replace=0, value=cholesterol_with_heartdisease.median())
+
+# Feature Selection: Separate target and predictors
+df_clean = pd.get_dummies(df_clean, drop_first=True)
+X = df_clean.drop(["HeartDisease"], axis=1)
+y = df_clean["HeartDisease"]
