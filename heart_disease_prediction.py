@@ -1,10 +1,11 @@
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import accuracy_score
 from sklearn.neighbors import KNeighborsClassifier
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 # Load the dataset
 df = pd.read_csv("heart_disease_prediction.csv")
